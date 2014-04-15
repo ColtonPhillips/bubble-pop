@@ -2,10 +2,10 @@
 <sound>
   <kind>0</kind>
   <extension>.wav</extension>
-  <origname>snd_chip_coin.wav</origname>
+  <origname>C:\Users\Colton\workspace\bubble-pop\Bubble Pop.gmx\\sound\audio\snd_level_up.wav</origname>
   <effects>0</effects>
   <volume>
-    <volume>1</volume>
+    <volume>0.8</volume>
   </volume>
   <pan>0</pan>
   <bitRates>

@@ -2,7 +2,7 @@
 <room>
   <caption></caption>
   <width>500</width>
-  <height>720</height>
+  <height>725</height>
   <vsnap>32</vsnap>
   <hsnap>32</hsnap>
   <isometric>0</isometric>
@@ -61,7 +61,8 @@ os_powersave_enable(false);</code>
   <instances>
     <instance objName="obj_bubble_controller" x="32" y="32" name="inst_55E83326" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_level_controller" x="96" y="32" name="inst_D84CA1A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_is_paused_controller" x="64" y="32" name="inst_5DFA09AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_frequent_save_controller" x="64" y="32" name="inst_5DFA09AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_game_of_life_controller" x="128" y="32" name="inst_A8DFAE17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

@@ -11,6 +11,7 @@
   <sprites name="sprites">
     <sprite>sprites\spr_bubble</sprite>
     <sprite>sprites\spr_shiny_bubble</sprite>
+    <sprite>sprites\spr_cell</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -25,12 +26,13 @@
   <objects name="objects">
     <object>objects\obj_bubble</object>
     <object>objects\obj_bubble_controller</object>
-    <object>objects\obj_is_paused_controller</object>
+    <object>objects\obj_frequent_save_controller</object>
     <object>objects\obj_level_controller</object>
+    <object>objects\obj_game_of_life_controller</object>
+    <object>objects\obj_gol_cell</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>
-    <room>rooms\room1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

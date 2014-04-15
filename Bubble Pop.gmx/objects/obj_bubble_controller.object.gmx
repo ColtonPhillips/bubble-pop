@@ -61,7 +61,7 @@ repeat(time_boop) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>background_colour = make_colour_hsv(colour_get_hue(background_colour)+ random(0.2)- random(0.4),colour_get_saturation(background_colour)+ random(0.2)- random(0.2),colour_get_value(background_colour)+ random(0.2)- random(0.2));
+            <string>background_colour = make_colour_hsv(colour_get_hue(background_colour)+ random(0.7)- random(0.75),colour_get_saturation(background_colour)+ random(0.2)- random(0.2),colour_get_value(background_colour)+ random(0.2)- random(0.2));
 
 if (global.level &gt; 24) {
     if (scr_chance(score)) {
@@ -93,6 +93,38 @@ if (scr_chance(180)) {
 audio_play_sound(snd_bubble_pop,1,false);
 audio_sound_pitch(snd_bubble_pop,1 + random(0.4) - random(0.4));
 }
+
+if (scr_chance(360)) {
+    repeat (2) {
+    var inst = instance_create(random(room_width),random(room_height),obj_bubble);
+    with (inst) {
+     physics_apply_impulse(phy_com_x,phy_com_y,random(70),random(70));
+     physics_apply_impulse(phy_com_x,phy_com_y,-random(70),random(70));
+     physics_apply_impulse(phy_com_x,phy_com_y,random(70),-random(70));
+     physics_apply_impulse(phy_com_x,phy_com_y,-random(70),-random(70));
+     }
+     };
+audio_play_sound(snd_bubble_pop,1,false);
+audio_sound_pitch(snd_bubble_pop,1 + random(0.4) - random(0.4));
+}
+
+
+if (scr_chance(3600)) {
+    repeat (3) {
+    var inst = instance_create(random(room_width),random(room_height),obj_bubble);
+    with (inst) {
+     physics_apply_impulse(phy_com_x,phy_com_y,random(100),random(100));
+     physics_apply_impulse(phy_com_x,phy_com_y,-random(100),random(100));
+     physics_apply_impulse(phy_com_x,phy_com_y,random(100),-random(100));
+     physics_apply_impulse(phy_com_x,phy_com_y,-random(100),-random(100));
+     sprite_index = spr_shiny_bubble;
+     }
+     };
+audio_play_sound(snd_bubble_pop,1,false);
+audio_sound_pitch(snd_bubble_pop,1 + random(0.4) - random(0.4));
+}
+
+
 
 if (scr_chance(1100)) {
 var ww = random(room_width);

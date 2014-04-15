@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var boop_it_up = 1 +random(1);
+            <string>image_alpha -= random(0.2);
+
+var boop_it_up = 1 +random(1);
 image_xscale= boop_it_up;
 image_yscale= boop_it_up;
 
@@ -39,12 +41,30 @@ image_xscale = 6;
 image_yscale = 6;
 }
 
+if (scr_chance(1001)) {
+image_xscale = 7;
+image_yscale = 7;
+}
+
+if (scr_chance(1001)) {
+image_xscale += 1;
+image_yscale += 1;
+}
+
 if (scr_chance(100)) {
-    image_index = spr_shiny_bubble;
+    sprite_index = spr_shiny_bubble;
     image_speed = 0.22;
 }
 physics_apply_torque(-random(100.7));
 physics_apply_torque(random(100.7));
+
+if (scr_chance(2000)) {
+physics_apply_impulse(phy_com_x,phy_com_y,random(100),random(100));
+physics_apply_impulse(phy_com_x,phy_com_y,-random(100),-random(100));
+
+physics_apply_impulse(phy_com_x,phy_com_y,-random(100),random(100));
+physics_apply_impulse(phy_com_x,phy_com_y,random(100),-random(100));
+  }
 </string>
           </argument>
         </arguments>
@@ -97,6 +117,21 @@ physics_apply_impulse(phy_com_x,phy_com_y,random(0.4),-random(0.4));
             <string>audio_play_sound(snd_bubble_pop,1,false);
 audio_sound_pitch(snd_bubble_pop,1 + random(0.4) - random(0.4));
 score++;
+
+effect_create_below(ef_flare, x, y, 32, c_white);
+if (sprite_index == spr_shiny_bubble) 
+{
+
+audio_sound_pitch(snd_level_up,1.7+ random(0.4) - random(0.4));
+audio_play_sound(snd_level_up,1,false);
+audio_sound_pitch(snd_level_up,0.7+ random(0.4) - random(0.4));
+audio_play_sound(snd_level_up,1,false);
+effect_create_below(ef_flare, x+6, y, 32, c_red);
+effect_create_below(ef_flare, x-6, y, 32, c_red);
+effect_create_below(ef_flare, x, y+6, 32, c_red);
+effect_create_below(ef_flare, x, y-6, 32, c_red);
+score += 9;
+}
 
 instance_destroy();
 </string>
