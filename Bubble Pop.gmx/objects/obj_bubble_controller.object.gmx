@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>instance_create(room_width/2,room_height/2,obj_bubble);
-
+ini_open('Data.ini');
 global.last_hour_of_year = ini_read('Data.ini','hour_of_year', 'hour_of_year', date_get_hour_of_year(date_current_datetime()));
+ini_close();
 time_boop = date_get_hour_of_year(date_current_datetime());
 time_boop -= global.last_hour_of_year;
 if time_boop &lt; 0 time_boop = 1;
@@ -61,7 +62,8 @@ repeat(time_boop) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>background_colour = make_colour_hsv(colour_get_hue(background_colour)+ random(0.7)- random(0.75),colour_get_saturation(background_colour)+ random(0.2)- random(0.2),colour_get_value(background_colour)+ random(0.2)- random(0.2));
+            <string>//background_colour = make_colour_hsv(colour_get_hue(background_colour)+ random(0.5)- random(0.5),colour_get_saturation(background_colour)+ random(0.2)- random(0.2),colour_get_value(background_colour)+ random(0.2)- random(0.2));
+//  ^ adds bug to html version. might as well just nuke it.
 
 if (global.level &gt; 24) {
     if (scr_chance(score)) {
@@ -90,6 +92,21 @@ audio_sound_pitch(snd_bubble_pop,1 + random(0.4) - random(0.4));
 
 if (scr_chance(180)) {
     instance_create(random(room_width),random(room_height),obj_bubble);
+audio_play_sound(snd_bubble_pop,1,false);
+audio_sound_pitch(snd_bubble_pop,1 + random(0.4) - random(0.4));
+}
+
+if (scr_chance(280)) {
+   var inst =  instance_create(random(room_width),random(room_height),obj_bubble);
+   
+       with (inst) {
+     physics_apply_impulse(phy_com_x,phy_com_y,random(7),random(7));
+     physics_apply_impulse(phy_com_x,phy_com_y,-random(7),random(7));
+     physics_apply_impulse(phy_com_x,phy_com_y,random(7),-random(7));
+     physics_apply_impulse(phy_com_x,phy_com_y,-random(7),-random(7));
+     }
+
+   
 audio_play_sound(snd_bubble_pop,1,false);
 audio_sound_pitch(snd_bubble_pop,1 + random(0.4) - random(0.4));
 }

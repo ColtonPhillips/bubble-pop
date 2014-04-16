@@ -3,7 +3,7 @@
   <spriteName>spr_bubble</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-11</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_alpha -= random(0.2);
+            <string>image_alpha -= random(0.22);
 
 var boop_it_up = 1 +random(1);
 image_xscale= boop_it_up;
@@ -133,6 +133,13 @@ effect_create_below(ef_flare, x, y-6, 32, c_red);
 score += 9;
 }
 
+var inst = instance_create(x,y,obj_bubble_pop);
+with (inst) {
+    image_xscale = other.image_xscale;
+    image_yscale = other.image_yscale;
+    image_alpha = other.image_alpha;
+}
+
 instance_destroy();
 </string>
           </argument>
@@ -146,7 +153,7 @@ instance_destroy();
   <PhysicsObjectDensity>0.200000002980232</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.400000005960464</PhysicsObjectRestitution>
   <PhysicsObjectGroup>1</PhysicsObjectGroup>
-  <PhysicsObjectLinearDamping>0.00999999977648258</PhysicsObjectLinearDamping>
+  <PhysicsObjectLinearDamping>0.200000002980232</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.300000011920929</PhysicsObjectAngularDamping>
   <PhysicsObjectFriction>0.100000001490116</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>

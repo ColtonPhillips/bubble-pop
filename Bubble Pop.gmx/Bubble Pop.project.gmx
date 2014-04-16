@@ -10,6 +10,7 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_bubble</sprite>
+    <sprite>sprites\spr_bubble_pop</sprite>
     <sprite>sprites\spr_shiny_bubble</sprite>
     <sprite>sprites\spr_cell</sprite>
   </sprites>
@@ -30,6 +31,7 @@
     <object>objects\obj_level_controller</object>
     <object>objects\obj_game_of_life_controller</object>
     <object>objects\obj_gol_cell</object>
+    <object>objects\obj_bubble_pop</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>

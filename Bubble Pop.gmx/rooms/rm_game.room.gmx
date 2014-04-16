@@ -12,12 +12,13 @@
   <showcolour>-1</showcolour>
   <code>device_mouse_dbclick_enable(false);
 
+ini_open('Data.ini');
 score = ini_read('Data.ini','score','score',0);
 global.level = ini_read('Data.ini','level','level',1);
 background_colour = ini_read('Data.ini','background_colour','background_colour',c_black);
 //global.last_hour_of_year = ini_read('Data.ini','hour_of_year', 'hour_of_year', date_get_hour_of_year(date_current_datetime()));
 // dear god why would the objects creation code happen before the room creation code?
-
+ini_close();
 
 os_powersave_enable(false);</code>
   <enableViews>0</enableViews>
