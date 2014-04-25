@@ -96,7 +96,7 @@ audio_play_sound(snd_bubble_pop,1,false);
 audio_sound_pitch(snd_bubble_pop,1 + random(0.4) - random(0.4));
 }
 
-if (scr_chance(280)) {
+if (scr_chance(100)) {
    var inst =  instance_create(random(room_width),random(room_height),obj_bubble);
    
        with (inst) {
@@ -111,7 +111,7 @@ audio_play_sound(snd_bubble_pop,1,false);
 audio_sound_pitch(snd_bubble_pop,1 + random(0.4) - random(0.4));
 }
 
-if (scr_chance(360)) {
+if (scr_chance(260)) {
     repeat (2) {
     var inst = instance_create(random(room_width),random(room_height),obj_bubble);
     with (inst) {
@@ -126,7 +126,7 @@ audio_sound_pitch(snd_bubble_pop,1 + random(0.4) - random(0.4));
 }
 
 
-if (scr_chance(3600)) {
+if (scr_chance(1600)) {
     repeat (3) {
     var inst = instance_create(random(room_width),random(room_height),obj_bubble);
     with (inst) {
@@ -153,7 +153,7 @@ audio_play_sound(snd_bubble_pop,1,false);
 audio_sound_pitch(snd_bubble_pop,1 + random(0.4) - random(0.4));
 }
 
-if (scr_chance(3000)) {
+if (scr_chance(1000)) {
 var ww = random(room_width);
 var hh = random(room_height);
 

@@ -39,7 +39,7 @@
     <option_android_licensing_enable>0</option_android_licensing_enable>
     <option_android_licensing_key></option_android_licensing_key>
     <option_android_major_version>1</option_android_major_version>
-    <option_android_minor_version>3</option_android_minor_version>
+    <option_android_minor_version>4</option_android_minor_version>
     <option_android_orient_landscape>true</option_android_orient_landscape>
     <option_android_orient_portrait>true</option_android_orient_portrait>
     <option_android_orientation>0</option_android_orientation>

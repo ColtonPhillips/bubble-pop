@@ -25,15 +25,23 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_alpha -= random(0.22);
+            <string>
+image_speed = 0.1;
 
-var boop_it_up = 1 +random(1);
+image_alpha -= random(0.22);
+
+var boop_it_up = 1 +random(2);
 image_xscale= boop_it_up;
 image_yscale= boop_it_up;
 
 if (scr_chance(6)) {
 audio_play_sound(snd_bubble_pop,1,false);
 audio_sound_pitch(snd_bubble_pop,1 + random(0.4) - random(0.4));
+}
+
+if (scr_chance(2)) { 
+image_xscale+= 1;
+image_yscale+= 1;
 }
 
 if (scr_chance(1000)) {
@@ -46,7 +54,7 @@ image_xscale = 7;
 image_yscale = 7;
 }
 
-if (scr_chance(1001)) {
+if (scr_chance(101)) {
 image_xscale += 1;
 image_yscale += 1;
 }
@@ -92,6 +100,8 @@ physics_apply_impulse(phy_com_x,phy_com_y,-random(0.4),-random(0.4));
 
 physics_apply_impulse(phy_com_x,phy_com_y,-random(0.4),random(0.4));
 physics_apply_impulse(phy_com_x,phy_com_y,random(0.4),-random(0.4));
+
+wrap_physics_room();
 </string>
           </argument>
         </arguments>
@@ -151,7 +161,7 @@ instance_destroy();
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
   <PhysicsObjectDensity>0.200000002980232</PhysicsObjectDensity>
-  <PhysicsObjectRestitution>0.400000005960464</PhysicsObjectRestitution>
+  <PhysicsObjectRestitution>0.5</PhysicsObjectRestitution>
   <PhysicsObjectGroup>1</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.200000002980232</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.300000011920929</PhysicsObjectAngularDamping>

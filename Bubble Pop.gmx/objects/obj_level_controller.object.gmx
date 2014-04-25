@@ -31,9 +31,9 @@
 
 if (power(1.45,global.level)/global.level + 2.2 * global.level - power(1.25,global.level) + global.level &lt; score) {
     global.level++;
-    background_colour = make_color_hsv(random(255),255 - random(200),255 - random(200));
+    background_colour = make_color_hsv(random(255),255 - random(20),255 - random(230));
     audio_play_sound(snd_level_up,1,false);
-    audio_sound_pitch(snd_level_up,1 + random(0.3) - random(0.2));
+    audio_sound_pitch(snd_level_up,1 + random(0.3) - random(0.6));
 }
 </string>
           </argument>
